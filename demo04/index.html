@@ -8,16 +8,18 @@
   <body>
     <div id="example"></div>
     <script type="text/babel">
-      var HelloMessage = React.createClass({
-        render: function() {
-          return <h1>Hello {this.props.name}</h1>;
+        class HelloMessage extends React.Component {
+            render(){
+                return (
+                    <h1> Hello {this.props.name}</h1>
+                );
+            }
         }
-      });
-
       ReactDOM.render(
-        <HelloMessage name="John" />,
-        document.getElementById('example')
-      );
-    </script>
+          <HelloMessage />,
+          document.getElementById('example')
+      )
+
+  </script>
   </body>
 </html>

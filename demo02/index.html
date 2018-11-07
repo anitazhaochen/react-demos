@@ -13,9 +13,14 @@
       ReactDOM.render(
         <div>
         {
-          names.map(function (name, index) {
-            return <div key={index}>Hello, {name}!</div>
-          })
+            /*
+          *names.map(function (name, index) {
+          *  return <div key={index}>Hello, {name}!</div>
+          *})
+          */
+            names.map((name,index) => {
+                return <div key={index}>Hello, {name}!</div>
+            })
         }
         </div>,
         document.getElementById('example')

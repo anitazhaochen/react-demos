@@ -7,26 +7,42 @@
   </head>
   <body>
     <div id="example"></div>
-    <script type="text/babel">
-      var Input = React.createClass({
-        getInitialState: function() {
-          return {value: 'Hello!'};
-        },
-        handleChange: function(event) {
-          this.setState({value: event.target.value});
-        },
-        render: function () {
-          var value = this.state.value;
-          return (
-            <div>
-              <input type="text" value={value} onChange={this.handleChange} />
-              <p>{value}</p>
-            </div>
-          );
-        }
-      });
 
-      ReactDOM.render(<Input/>, document.getElementById('example'));
+
+    <script type="text/babel">
+      class Input extends React.Component {
+          constructor(){
+              super()
+              this.state = {
+                  value: 'Hello!'
+              }
+          }
+
+          handleChange(e) {
+              this.setState({
+                  value: e.target.value
+              })
+          }
+
+          render() {
+              const value = this.state.value;
+              return (
+                  <div>
+                    <input type="text" value={value} onChange={this.handleChange.bind(this)} />
+                    <p>{value}</p>
+                  </div>
+              )
+          }
+      }
+
+      ReactDOM.render(
+          <Input />,
+          document.getElementById("example")
+      )
+
+
+
+
     </script>
   </body>
 </html>
